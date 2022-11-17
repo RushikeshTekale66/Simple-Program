@@ -1,0 +1,54 @@
+import java.util.Scanner;
+class Online_result_Management{
+    int rno, m1, m2, m3, total;
+    String name;
+    float per;
+
+    Online_result_Management(int rno, int m1, int m2, int m3, String name){
+        this.rno=rno;
+        this.m1=m1;
+        this.m2=m2;
+        this.m3=m3;
+        this.name=name;
+    }
+
+    void calculate(){
+        total=m1+m2+m3;
+        per = total/3.0f;
+    }
+
+    void display(){
+        System.out.println("Roll no of Student     = " + rno);
+        System.out.println("Name of Student        = " + name);
+        System.out.println("Total Marks of Student = " + total);
+        System.out.println("Persentage of Student  = " + per);
+        System.out.println("\n");
+    }
+
+    public static void main(String args []){
+        Online_result_Management s[];
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the Strength of the student");
+        int n = sc.nextInt();
+        s = new Online_result_Management[n];
+
+        for(int i = 0; i<n; i++){
+
+            System.out.println("Enter Student roll no : ");
+            int rno = sc.nextInt();
+            System.out.println("Enter the name of student: ");
+            String  name = sc.next();
+            System.out.println("Enter the mark of Student : ");
+            int m1 = sc.nextInt();
+            int m2 = sc.nextInt();
+            int m3 = sc.nextInt();
+            s[i] = new Online_result_Management(rno, m1, m2, m3, name);
+        }
+        for(int i=0; i<n; i++){
+            s[i].calculate();
+            s[i].display();
+        }
+
+    }
+
+}
