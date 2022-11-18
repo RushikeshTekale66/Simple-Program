@@ -1,0 +1,29 @@
+import java.util.Arrays;
+//Bubble sort
+
+class Sorting_of_Array{
+    public static void main(String args []){
+
+        //List of given araay
+        int [] array = {2,100,3,8,700,145,744};
+
+        //Method calling
+        searching(array);
+        System.out.println(Arrays.toString(array));
+    }
+    static void searching(int[] arr){
+        for(int i=0; i<arr.length; i++){
+            for(int j=1; j<arr.length-i; j++){
+                
+                //Check wether the J^th value is greater or i^th
+                if(arr[j]<arr[j-1]){
+                    
+                    //If the I^th value is greater then swap the numbers and arrange in the asending order
+                    int temp = arr[j];
+                    arr[j]=arr[j-1];
+                    arr[j-1]=temp;
+                }
+            }
+        }
+    }
+}
